@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZBCGRAPHIC</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Maintain Form Graphics</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBCGRAPHIC</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>MIME type &amp;1 is not allowed. Upload a JPEG or PNG file.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBCGRAPHIC</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>File &amp;1 must have extension .jpg, .jpeg or .png.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBCGRAPHIC</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Graphic name &amp;1 already exists.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>
