@@ -54,6 +54,9 @@
 
 ## Phase 2 — Business object
 
+> confirm 2026-10-02 · CDS alias: `Uuid` `GraphicName` `FileName` `MimeType` `GraphicContent` `IsActive` `CreatedBy` `CreatedAt` `LastChangedBy` `LastChangedAt` `LocalLastChangedAt` + virtual `ImageUrl`
+> behavior: `setInitialValues` (IsActive = X) · `deriveMimeTypeOnModify` · `defaultGraphicNameOnSave` / `OnModify` (ตัดนามสกุล + ตัวพิมพ์ใหญ่) · `validateMimeType` · `validateGraphicName` (ห้ามซ้ำทั้ง table) · auth global อย่างเดียว · etag master `LocalLastChangedAt` / total etag `LastChangedAt`
+
 | Object | Type | Clone จาก | หน้าที่ | Status |
 |---|---|---|---|---|
 | `ZR_GRAPHIC` | CDS root view entity | `YR_GRAPHIC` | interface ของ table | ⬜ |
