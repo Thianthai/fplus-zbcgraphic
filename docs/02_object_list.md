@@ -88,9 +88,9 @@
 
 | Object | Type | หน้าที่ | Status |
 |---|---|---|---|
-| `ZCL_UTILITY=>get_form_graphic( )` | Method ใหม่ | รับ `graphic_name` -> คืน `graphic_content` ของรูปที่ `is_active = X` | 🟨 |
-| `ZCL_UTILITY=>get_form_graphic_base64( )` | Method ใหม่ | เหมือนตัวบนแต่คืน base64 string สำหรับ XML data ของ Adobe Form | 🟨 |
-| `ZCL_UTILITY` testclasses `ltc_form_graphic` | ABAP Unit | `cl_osql_test_environment` จำลอง `ZTBC_GRAPHIC` | 🟨 |
+| `ZCL_UTILITY=>get_form_graphic( )` | Method ใหม่ | รับ `graphic_name` -> คืน `graphic_content` ของรูปที่ `is_active = X` | ✅ `fplus-zbcutility` `09c6848` |
+| `ZCL_UTILITY=>get_form_graphic_base64( )` | Method ใหม่ | เหมือนตัวบนแต่คืน base64 string สำหรับ XML data ของ Adobe Form | ✅ `fplus-zbcutility` `09c6848` |
+| `ZCL_UTILITY` testclasses `ltc_form_graphic` | ABAP Unit | `cl_osql_test_environment` จำลอง `ZTBC_GRAPHIC` | ✅ `fplus-zbcutility` `09c6848` · รอผลรัน test |
 
 ## Test ที่ผ่านแล้ว
 
