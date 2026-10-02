@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Maintain Form Graphics",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_ALV5_DEFAULT"
+  },
+  "ui5AppDetails": {
+    "appId": "com.fplus.bc.zbcgraphic"
+  },
+  "navigation": {
+    "targetMappingId": "ZBCGRAPHIC_UI5R_TM",
+    "semanticObject": "ZBCGRAPHIC",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "ZBCGRAPHIC_UI5R_AL",
+      "tileType": "static",
+      "standard": {
+        "title": "Maintain Form Graphics",
+        "subtitle": "ZBCGRAPHIC",
+        "keywords": "ZBCGRAPHIC"
+      }
+    }
+  ]
+}
