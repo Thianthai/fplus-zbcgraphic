@@ -15,13 +15,13 @@
 
 1. แอป Fiori Elements สำหรับ upload / maintain รูป (JPEG / PNG) ที่ใช้ใน Adobe Form
    ตั้งชื่อรูป (`graphic_name`) และเปิด/ปิดใช้งาน (`is_active`)
-2. method ใน `ZCL_UTILITY` รับ `graphic_name` แล้วคืน `attachment` ของรูปที่ `is_active = X`
+2. method ใน `ZCL_UTILITY` รับ `graphic_name` แล้วคืน `graphic_content` ของรูปที่ `is_active = X`
    ให้ form ทุกตัวเรียกไป binding ใน Adobe Form
 
 ```
 ผู้ใช้ ──▶ Fiori app (ZUI_GRAPHIC_O4) ──▶ ZTBC_GRAPHIC
                                               │
-Adobe Form ของ RICEFW ต่าง ๆ ──▶ ZCL_UTILITY ──┘  (graphic_name + is_active = X -> attachment)
+Adobe Form ของ RICEFW ต่าง ๆ ──▶ ZCL_UTILITY ──┘  (graphic_name + is_active = X -> graphic_content)
 ```
 
 ## เอกสาร

@@ -57,5 +57,6 @@ Source: https://github.com/Thianthai/demo-ygraphic.git (commit `e337d98`, packag
 | F7 | naming ใน code | `DATA(key)`, `<data>`, ไม่มี ABAP Doc | ปรับให้ตรงกฎกลาง (`ls_key`, `<lfs_data>`, `"!`) |
 | F8 | comment block / code ที่ comment ทิ้ง | `deriveMimeTypeOnSave`, lineItem ของ FileName | ไม่ยกมา |
 | F9 | `validateMimeType` trigger | `create; field MimeType, FileName` | ok — คงไว้ |
-| F11 | ชื่อ field / data element | `isactive` · `YE_GRAPHICNAME` | เปลี่ยนเป็น `is_active` · `ZE_GRAPHIC_NAME` (ผู้ใช้สั่ง) |
+| F11 | ชื่อ field / data element | `isactive` · `attachment` · `YE_GRAPHICNAME` · `/DMO/ATTACHMENT` | เปลี่ยนเป็น `is_active` · `graphic_content` · `ZE_GRAPHIC_NAME` · `ZE_GRAPHIC_CONTENT` (ผู้ใช้สั่ง) |
+| F12 | primary key ของ table | ไม่ได้ระบุ | ต้องใส่ `@AbapCatalog.primaryKey.invertedIndividualIndex : true` ไม่งั้นได้ warning `Key must have the type Inverted Individual on the database` |
 | F10 | MIME `image/jpg` | อยู่ใน acceptableMimeTypes และ allowed list | ไม่ใช่ MIME มาตรฐานแต่ browser บางตัวส่งมา -> คงไว้ |

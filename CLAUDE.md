@@ -33,6 +33,9 @@ Clone จาก `YGRAPHIC` (repo อ้างอิง https://github.com/Thiant
 - **ห้ามใส่ emoji ใน comment ของ ABAP object**
 - **ABAP Doc (`"!`) ทุก class · method · constant group · type** (ยกเว้น `REDEFINITION`)
 - **ห้าม `CONV #( )` ที่ไม่จำเป็น**
+- **table ใหม่ทุกตัวต้องมี `@AbapCatalog.primaryKey.invertedIndividualIndex : true`**
+  ไม่งั้นได้ warning `Key must have the type Inverted Individual on the database` (เจอจริงที่ `ZTBC_GRAPHIC` 2026-10-02)
+- ตัวรูปใช้ชื่อ `graphic_content` / `GraphicContent` / `ZE_GRAPHIC_CONTENT` ไม่ใช่ `attachment` แบบ source (ผู้ใช้สั่ง 2026-10-02)
 
 ## Git — การแบ่งงาน
 

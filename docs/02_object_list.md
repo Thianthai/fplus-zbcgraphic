@@ -16,16 +16,18 @@
 
 | Object | Type | Clone จาก | หน้าที่ | Status |
 |---|---|---|---|---|
-| `ZD_GRAPHIC_NAME` | Domain CHAR 128 ตัวพิมพ์ใหญ่ | `/DMO/FILENAME` | domain ของชื่อรูป (OQ-09 แบบ B) | 🟨 |
-| `ZD_GRAPHIC_TEXT` | Domain CHAR 128 lowercase | `/DMO/FILENAME` | domain ของชื่อไฟล์ / MIME | 🟨 |
-| `ZE_GRAPHIC_NAME` | Data element | `YE_GRAPHICNAME` | ชื่อรูปที่ form ใช้ค้น | 🟨 |
-| `ZE_GRAPHIC_FILE_NAME` | Data element | `/DMO/FILENAME` | ชื่อไฟล์ที่ upload | 🟨 |
-| `ZE_GRAPHIC_MIME_TYPE` | Data element | `/DMO/MIME_TYPE` | MIME type | 🟨 |
-| `ZE_GRAPHIC_ATTACHMENT` | Data element RAWSTRING | `/DMO/ATTACHMENT` | ตัวรูป | 🟨 |
-| `ZTBC_GRAPHIC` | Table | `YTBC_GRAPHIC` | เก็บรูป · field `isactive` เปลี่ยนเป็น `is_active` · เพิ่ม `local_last_changed_at` | 🟨 |
-| `ZBCGRAPHIC` | Message class | `/DMO/CM_FLIGHT_MESSAGES` | ข้อความ validation (MIME · นามสกุลไฟล์ · ชื่อซ้ำ) | 🟨 |
+| `ZD_GRAPHIC_NAME` | Domain CHAR 128 ตัวพิมพ์ใหญ่ | `/DMO/FILENAME` | domain ของชื่อรูป (OQ-09 แบบ B) | ✅ `a30c754` |
+| `ZD_GRAPHIC_TEXT` | Domain CHAR 128 lowercase | `/DMO/FILENAME` | domain ของชื่อไฟล์ / MIME | ✅ `a30c754` |
+| `ZE_GRAPHIC_NAME` | Data element | `YE_GRAPHICNAME` | ชื่อรูปที่ form ใช้ค้น | ✅ `a30c754` |
+| `ZE_GRAPHIC_FILE_NAME` | Data element | `/DMO/FILENAME` | ชื่อไฟล์ที่ upload | ✅ `a30c754` |
+| `ZE_GRAPHIC_MIME_TYPE` | Data element | `/DMO/MIME_TYPE` | MIME type | ✅ `a30c754` |
+| `ZE_GRAPHIC_CONTENT` | Data element RAWSTRING | `/DMO/ATTACHMENT` | ตัวรูป (ผู้ใช้เปลี่ยนชื่อจาก `ZE_GRAPHIC_ATTACHMENT`) | ✅ `a30c754` |
+| `ZTBC_GRAPHIC` | Table | `YTBC_GRAPHIC` | เก็บรูป · field `isactive` -> `is_active` · `attachment` -> `graphic_content` · เพิ่ม `local_last_changed_at` · primary key แบบ inverted individual | ✅ `a30c754` |
+| `ZBCGRAPHIC` | Message class | `/DMO/CM_FLIGHT_MESSAGES` | ข้อความ validation (MIME · นามสกุลไฟล์ · ชื่อซ้ำ) | ✅ `a30c754` |
 
 ### Field ของ `ZTBC_GRAPHIC`
+
+`@AbapCatalog.primaryKey.invertedIndividualIndex : true` (serialize เป็น `PK_IS_INVHASH = X`)
 
 | Field | Key | Data element | หมายเหตุ |
 |---|---|---|---|
@@ -34,7 +36,7 @@
 | `graphic_name` | | `ZE_GRAPHIC_NAME` | ห้ามซ้ำทั้ง table · เก็บตัวพิมพ์ใหญ่ |
 | `file_name` | | `ZE_GRAPHIC_FILE_NAME` | |
 | `mime_type` | | `ZE_GRAPHIC_MIME_TYPE` | |
-| `attachment` | | `ZE_GRAPHIC_ATTACHMENT` | |
+| `graphic_content` | | `ZE_GRAPHIC_CONTENT` | |
 | `is_active` | | `ABAP_BOOLEAN` | |
 | `created_by` | | `ABP_CREATION_USER` | |
 | `created_at` | | `ABP_CREATION_TSTMPL` | |
@@ -78,6 +80,6 @@
 
 | Object | Type | หน้าที่ | Status |
 |---|---|---|---|
-| `ZCL_UTILITY=>get_form_graphic( )` | Method ใหม่ | รับ `graphic_name` -> คืน `attachment` ของรูปที่ `is_active = X` | ⬜ |
+| `ZCL_UTILITY=>get_form_graphic( )` | Method ใหม่ | รับ `graphic_name` -> คืน `graphic_content` ของรูปที่ `is_active = X` | ⬜ |
 | `ZCL_UTILITY=>get_form_graphic_base64( )` | Method ใหม่ | เหมือนตัวบนแต่คืน base64 string สำหรับ XML data ของ Adobe Form | ⬜ |
 | `ZCL_UTILITY` testclasses | ABAP Unit | test ด้วย SQL test double | ⬜ |
