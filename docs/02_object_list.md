@@ -77,9 +77,10 @@
 | `ZUI_GRAPHIC` | Service definition | `YUI_GRAPHIC` | expose `ZC_GRAPHIC as Graphic` | ✅ `821ef10` |
 | `ZUI_GRAPHIC_O4` | Service binding OData V4 UI | `YUI_GRAPHIC_O4` | publish + preview · ชื่อ/version ต้องตรงกับ path ใน `ZCL_GRAPHIC_IMAGE_URL` | ✅ `821ef10` · published · ทดสอบ preview T1–T8 ผ่าน 2026-10-02 |
 | `ZUI_GRAPHIC_O4_0001_G4BA` (SCO2) · `881BC055…HT` (SUSH) | generated | — | SAP สร้างตอน publish (`S_START`) | ✅ `821ef10` |
-| `zbcgraphic` / BSP `ZBCGRAPHIC` | Fiori app (BAS · List Report OData V4) | — | deploy ขึ้น tenant · tile `ZBCGraphic-manage` | ⬜ ผู้ใช้ทำเอง |
-| `ZBCGRAPHIC_UI5R` (คาดว่า generate) | IAM app | — | ผูก service `ZUI_GRAPHIC_O4` + Fiori app | ⬜ ผู้ใช้ทำเอง |
-| `ZBCGRAPHIC_BC` | Business catalog | — | ผูก IAM app ให้ assign ผ่าน business role | ⬜ ผู้ใช้ทำเอง |
+| `ZBCGRAPHIC_UI5R` | App descriptor item (UIAD) | — | Fiori Elements app จาก BAS · app id `com.fplus.bc.zbcgraphic` · tile `ZBCGRAPHIC-manage` "Maintain Form Graphics" · ตัว BSP ไม่ถูก serialize ใน abapGit | ✅ `a453f3c` · deploy + ทดสอบบน tenant ผ่าน 2026-10-02 |
+| `ZIAM_ZBCGRAPHIC_EXT` | IAM app (SIA6) type EXT | — | ผูก `ZBCGRAPHIC_UI5R` + service `ZUI_GRAPHIC_O4` (OData V4 / SUSH `881BC055…`) · published | ✅ `a453f3c` |
+| `ZBC_ZBCGRAPHIC` | Business catalog (SIA1) | — | published · ให้ admin assign เข้า business role (config ไม่ขึ้น git) | ✅ `a453f3c` |
+| `ZBC_ZBCGRAPHIC_0001` | Catalog app assignment (SIA7) | — | ผูก `ZIAM_ZBCGRAPHIC_EXT` เข้า `ZBC_ZBCGRAPHIC` | ✅ `a453f3c` |
 
 ## Phase 4 — Utility method (repo `fplus-zbcutility`)
 

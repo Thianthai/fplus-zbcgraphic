@@ -19,7 +19,7 @@
    ให้ form ทุกตัวเรียกไป binding ใน Adobe Form
 
 ```
-ผู้ใช้ ──▶ Fiori app (ZUI_GRAPHIC_O4) ──▶ ZTBC_GRAPHIC
+ผู้ใช้ ──▶ Fiori app (ZBCGRAPHIC-manage) ──▶ ZTBC_GRAPHIC
                                               │
 Adobe Form ของ RICEFW ต่าง ๆ ──▶ ZCL_UTILITY ──┘  (graphic_name + is_active = X -> graphic_content)
 ```
