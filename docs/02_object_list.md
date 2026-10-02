@@ -16,13 +16,14 @@
 
 | Object | Type | Clone จาก | หน้าที่ | Status |
 |---|---|---|---|---|
-| `ZD_GRAPHIC_TEXT` | Domain CHAR 128 lowercase | `/DMO/FILENAME` | domain ของชื่อรูป / ชื่อไฟล์ / MIME | ⬜ |
-| `ZE_GRAPHIC_NAME` | Data element | `YE_GRAPHICNAME` | ชื่อรูปที่ form ใช้ค้น | ⬜ |
-| `ZE_GRAPHIC_FILE_NAME` | Data element | `/DMO/FILENAME` | ชื่อไฟล์ที่ upload | ⬜ |
-| `ZE_GRAPHIC_MIME_TYPE` | Data element | `/DMO/MIME_TYPE` | MIME type | ⬜ |
-| `ZE_GRAPHIC_ATTACHMENT` | Data element RAWSTRING | `/DMO/ATTACHMENT` | ตัวรูป | ⬜ |
-| `ZTBC_GRAPHIC` | Table | `YTBC_GRAPHIC` | เก็บรูป · field `isactive` เปลี่ยนเป็น `is_active` · เพิ่ม `local_last_changed_at` | ⬜ |
-| `ZBCGRAPHIC` | Message class | `/DMO/CM_FLIGHT_MESSAGES` | ข้อความ validation (MIME · นามสกุลไฟล์ · ชื่อซ้ำ) | ⬜ |
+| `ZD_GRAPHIC_NAME` | Domain CHAR 128 ตัวพิมพ์ใหญ่ | `/DMO/FILENAME` | domain ของชื่อรูป (OQ-09 แบบ B) | 🟨 |
+| `ZD_GRAPHIC_TEXT` | Domain CHAR 128 lowercase | `/DMO/FILENAME` | domain ของชื่อไฟล์ / MIME | 🟨 |
+| `ZE_GRAPHIC_NAME` | Data element | `YE_GRAPHICNAME` | ชื่อรูปที่ form ใช้ค้น | 🟨 |
+| `ZE_GRAPHIC_FILE_NAME` | Data element | `/DMO/FILENAME` | ชื่อไฟล์ที่ upload | 🟨 |
+| `ZE_GRAPHIC_MIME_TYPE` | Data element | `/DMO/MIME_TYPE` | MIME type | 🟨 |
+| `ZE_GRAPHIC_ATTACHMENT` | Data element RAWSTRING | `/DMO/ATTACHMENT` | ตัวรูป | 🟨 |
+| `ZTBC_GRAPHIC` | Table | `YTBC_GRAPHIC` | เก็บรูป · field `isactive` เปลี่ยนเป็น `is_active` · เพิ่ม `local_last_changed_at` | 🟨 |
+| `ZBCGRAPHIC` | Message class | `/DMO/CM_FLIGHT_MESSAGES` | ข้อความ validation (MIME · นามสกุลไฟล์ · ชื่อซ้ำ) | 🟨 |
 
 ### Field ของ `ZTBC_GRAPHIC`
 
@@ -30,7 +31,7 @@
 |---|---|---|---|
 | `client` | X | `abap.clnt` | |
 | `uuid` | X | `SYSUUID_X16` | managed numbering |
-| `graphic_name` | | `ZE_GRAPHIC_NAME` | ห้ามซ้ำทั้ง table |
+| `graphic_name` | | `ZE_GRAPHIC_NAME` | ห้ามซ้ำทั้ง table · เก็บตัวพิมพ์ใหญ่ |
 | `file_name` | | `ZE_GRAPHIC_FILE_NAME` | |
 | `mime_type` | | `ZE_GRAPHIC_MIME_TYPE` | |
 | `attachment` | | `ZE_GRAPHIC_ATTACHMENT` | |

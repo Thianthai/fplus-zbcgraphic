@@ -10,4 +10,4 @@
 | OQ-06 | signature ของ utility | `get_form_graphic( iv_graphic_name ) RETURNING rv_attachment TYPE xstring` · ไม่เจอ = ค่าว่าง · **เพิ่ม `get_form_graphic_base64( )` คู่กัน** | ✅ 2026-10-02 |
 | OQ-07 | unit test ของ utility | ใช้ `cl_osql_test_environment` จำลอง table ไม่แตะข้อมูลจริง | เสนอ — ยืนยันตอน phase 4 |
 | OQ-08 | ข้อมูลใน `YTBC_GRAPHIC` | **ไม่ใช้ข้อมูลเดิม** upload ใหม่ | ✅ 2026-10-02 |
-| OQ-09 | ตัวพิมพ์เล็ก/ใหญ่ของ `graphic_name` | รอผู้ใช้ | รอผู้ใช้ |
+| OQ-09 | ตัวพิมพ์เล็ก/ใหญ่ของ `graphic_name` | **แบบ B**: domain `ZD_GRAPHIC_NAME` ไม่รับตัวพิมพ์เล็ก -> เก็บเป็นตัวพิมพ์ใหญ่ · utility แปลง `iv_graphic_name` เป็นตัวพิมพ์ใหญ่ก่อนค้น | ✅ 2026-10-02 |
