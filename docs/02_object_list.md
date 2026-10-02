@@ -70,14 +70,16 @@
 
 ## Phase 3 — Service + ทดสอบ
 
+> 3a (service) Claude ส่ง code · 3b (Fiori app) และ 3c (IAM app + business catalog) **ผู้ใช้ทำเองทั้งหมด** -> Claude ตรวจจาก repo หลังผู้ใช้ push แล้วบันทึกชื่อจริง
+
 | Object | Type | Clone จาก | หน้าที่ | Status |
 |---|---|---|---|---|
-| `ZUI_GRAPHIC` | Service definition | `YUI_GRAPHIC` | expose `ZC_GRAPHIC as Graphic` | ⬜ |
-| `ZUI_GRAPHIC_O4` | Service binding OData V4 UI | `YUI_GRAPHIC_O4` | publish + preview | ⬜ |
+| `ZUI_GRAPHIC` | Service definition | `YUI_GRAPHIC` | expose `ZC_GRAPHIC as Graphic` | 🟨 |
+| `ZUI_GRAPHIC_O4` | Service binding OData V4 UI | `YUI_GRAPHIC_O4` | publish + preview · ชื่อ/version ต้องตรงกับ path ใน `ZCL_GRAPHIC_IMAGE_URL` | 🟨 |
 | SCO2 / SUSH ของ binding | generated | — | SAP สร้างตอน publish | ⬜ |
-| `zbcgraphic` / BSP `ZBCGRAPHIC` | Fiori app (BAS · List Report OData V4) | — | deploy ขึ้น tenant · tile `ZBCGraphic-manage` | ⬜ (รอ confirm) |
-| `ZBCGRAPHIC_UI5R` (คาดว่า generate) | IAM app | — | ผูก service `ZUI_GRAPHIC_O4` + Fiori app | ⬜ (รอ confirm) |
-| `ZBCGRAPHIC_BC` | Business catalog | — | ผูก IAM app ให้ assign ผ่าน business role | ⬜ (รอ confirm) |
+| `zbcgraphic` / BSP `ZBCGRAPHIC` | Fiori app (BAS · List Report OData V4) | — | deploy ขึ้น tenant · tile `ZBCGraphic-manage` | ⬜ ผู้ใช้ทำเอง |
+| `ZBCGRAPHIC_UI5R` (คาดว่า generate) | IAM app | — | ผูก service `ZUI_GRAPHIC_O4` + Fiori app | ⬜ ผู้ใช้ทำเอง |
+| `ZBCGRAPHIC_BC` | Business catalog | — | ผูก IAM app ให้ assign ผ่าน business role | ⬜ ผู้ใช้ทำเอง |
 
 ## Phase 4 — Utility method (repo `fplus-zbcutility`)
 
