@@ -26,7 +26,7 @@ Adobe Form ของ RICEFW ต่าง ๆ ──▶ ZCL_UTILITY ──┘  (g
 
 ## สถานะ
 
-ครบทุก phase 2026-10-02 — app ทดสอบบน tenant ผ่าน · `ZCL_UTILITY` unit test เขียวครบ
+**ปิดงาน 2026-10-02** — ครบทุก phase · app ทดสอบบน tenant ผ่าน · `ZCL_UTILITY` unit test เขียวครบ
 
 ที่เหลือ (config ไม่ขึ้น git): assign `ZBC_ZBCGRAPHIC` เข้า business role · transport `ZBCGRAPHIC` ก่อนหรือพร้อม `ZBCUTILITY` · upload รูปจริงบน test/production
 
