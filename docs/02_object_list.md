@@ -59,14 +59,14 @@
 
 | Object | Type | Clone จาก | หน้าที่ | Status |
 |---|---|---|---|---|
-| `ZR_GRAPHIC` | CDS root view entity | `YR_GRAPHIC` | interface ของ table | 🟨 |
-| `ZR_GRAPHIC` | BDEF managed + draft | `YR_GRAPHIC` | behavior หลัก | 🟨 |
-| `ZTBC_GRAPHIC_D` | Draft table | `YTBC_GRAPHIC_D` | สร้างจาก quick fix ของ BDEF | 🟨 |
-| `ZBP_R_GRAPHIC` | Behavior pool | `YBP_R_GRAPHIC` | `lhc_Graphic` | 🟨 |
-| `ZCL_GRAPHIC_IMAGE_URL` | Class (virtual element) | `YCL_IMAGE_URL` | คำนวณ `ImageUrl` สำหรับ preview | 🟨 |
-| `ZC_GRAPHIC` | CDS projection | `YC_GRAPHIC` | สำหรับ UI | 🟨 |
-| `ZC_GRAPHIC` | BDEF projection | `YC_GRAPHIC` | | 🟨 |
-| `ZC_GRAPHIC` | Metadata extension | `YC_GRAPHIC` | layout Fiori Elements | 🟨 |
+| `ZR_GRAPHIC` | CDS root view entity | `YR_GRAPHIC` | interface ของ table | ✅ `69a04a0` |
+| `ZR_GRAPHIC` | BDEF managed + draft | `YR_GRAPHIC` | behavior หลัก | ✅ `69a04a0` |
+| `ZTBC_GRAPHIC_D` | Draft table | `YTBC_GRAPHIC_D` | สร้างจาก quick fix ของ BDEF · `PK_IS_INVHASH = X` | ✅ `69a04a0` |
+| `ZBP_R_GRAPHIC` | Behavior pool | `YBP_R_GRAPHIC` | `lhc_Graphic` · global class ยังไม่มี `"!` (แก้รอบหน้า) | ✅ `69a04a0` |
+| `ZCL_GRAPHIC_IMAGE_URL` | Class (virtual element) | `YCL_IMAGE_URL` | คำนวณ `ImageUrl` สำหรับ preview | ✅ `69a04a0` |
+| `ZC_GRAPHIC` | CDS projection | `YC_GRAPHIC` | สำหรับ UI | ✅ `69a04a0` |
+| `ZC_GRAPHIC` | BDEF projection | `YC_GRAPHIC` | | ✅ `69a04a0` |
+| `ZC_GRAPHIC` | Metadata extension | `YC_GRAPHIC` | layout Fiori Elements | ✅ `69a04a0` |
 
 ## Phase 3 — Service + ทดสอบ
 
@@ -75,9 +75,9 @@
 | `ZUI_GRAPHIC` | Service definition | `YUI_GRAPHIC` | expose `ZC_GRAPHIC as Graphic` | ⬜ |
 | `ZUI_GRAPHIC_O4` | Service binding OData V4 UI | `YUI_GRAPHIC_O4` | publish + preview | ⬜ |
 | SCO2 / SUSH ของ binding | generated | — | SAP สร้างตอน publish | ⬜ |
-| Fiori app (BAS · List Report OData V4) | — | — | deploy ขึ้น tenant · ชื่อ app / BSP ตั้งตอนสรุป phase | ⬜ |
-| IAM app | — | — | ผูก service + Fiori app | ⬜ |
-| Business catalog | — | — | ผูก IAM app ให้ assign ผ่าน business role | ⬜ |
+| `zbcgraphic` / BSP `ZBCGRAPHIC` | Fiori app (BAS · List Report OData V4) | — | deploy ขึ้น tenant · tile `ZBCGraphic-manage` | ⬜ (รอ confirm) |
+| `ZBCGRAPHIC_UI5R` (คาดว่า generate) | IAM app | — | ผูก service `ZUI_GRAPHIC_O4` + Fiori app | ⬜ (รอ confirm) |
+| `ZBCGRAPHIC_BC` | Business catalog | — | ผูก IAM app ให้ assign ผ่าน business role | ⬜ (รอ confirm) |
 
 ## Phase 4 — Utility method (repo `fplus-zbcutility`)
 
