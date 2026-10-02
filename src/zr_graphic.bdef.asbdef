@@ -1,0 +1,61 @@
+managed implementation in class zbp_r_graphic unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_GRAPHIC alias Graphic
+persistent table ztbc_graphic
+draft table ztbc_graphic_d
+lock master
+total etag LastChangedAt
+authorization master ( global )
+etag master LocalLastChangedAt
+{
+  field ( numbering : managed, readonly )
+    Uuid;
+
+  field ( readonly )
+    MimeType,
+    CreatedBy,
+    CreatedAt,
+    LastChangedBy,
+    LastChangedAt,
+    LocalLastChangedAt;
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare
+  {
+    determination defaultGraphicNameOnSave;
+    validation validateMimeType;
+    validation validateGraphicName;
+  }
+
+  determination setInitialValues           on modify { create; }
+  determination deriveMimeTypeOnModify     on modify { field FileName; }
+  determination defaultGraphicNameOnSave   on save   { create; }
+  determination defaultGraphicNameOnModify on modify { field FileName, GraphicName; }
+
+  validation validateMimeType    on save { create; field MimeType, FileName; }
+  validation validateGraphicName on save { create; field GraphicName; }
+
+  mapping for ztbc_graphic
+  {
+    Uuid               = uuid;
+    GraphicName        = graphic_name;
+    FileName           = file_name;
+    MimeType           = mime_type;
+    GraphicContent     = graphic_content;
+    IsActive           = is_active;
+    CreatedBy          = created_by;
+    CreatedAt          = created_at;
+    LastChangedBy      = last_changed_by;
+    LastChangedAt      = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

@@ -1,0 +1,103 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName:       'Form Graphic',
+    typeNamePlural: 'Form Graphics',
+    title:          { type: #STANDARD, value: 'GraphicName' },
+    description:    { type: #STANDARD, value: 'MimeType' },
+    imageUrl:       'GraphicContent'
+  }
+}
+
+annotate entity ZC_GRAPHIC with
+{
+  @UI.facet: [
+    {
+      id:              'GraphicInfo',
+      type:            #COLLECTION,
+      label:           'Graphic Information',
+      position:        10
+    },
+    {
+      id:              'GeneralInfo',
+      parentId:        'GraphicInfo',
+      type:            #FIELDGROUP_REFERENCE,
+      label:           'General Information',
+      targetQualifier: 'General',
+      position:        10
+    },
+    {
+      id:              'AdminInfo',
+      parentId:        'GraphicInfo',
+      type:            #FIELDGROUP_REFERENCE,
+      label:           'Administrative Data',
+      targetQualifier: 'Admin',
+      position:        20
+    }
+  ]
+
+  @UI.hidden: true
+  Uuid;
+
+  @UI: {
+    fieldGroup: [ { qualifier: 'General', position: 10, label: 'Image File' } ]
+  }
+  GraphicContent;
+
+  @UI: {
+    lineItem: [ { position: 10, importance: #HIGH, label: 'Preview' } ]
+  }
+  ImageUrl;
+
+  @UI: {
+    lineItem:       [ { position: 20, importance: #HIGH, label: 'Graphic Name' } ],
+    identification: [ { position: 10, label: 'Graphic Name' } ],
+    fieldGroup:     [ { qualifier: 'General', position: 20, label: 'Graphic Name' } ],
+    selectionField: [ { position: 10 } ]
+  }
+  GraphicName;
+
+  @UI.hidden: true
+  FileName;
+
+  @UI: {
+    lineItem:   [ { position: 40, importance: #MEDIUM, label: 'MIME Type' } ],
+    fieldGroup: [ { qualifier: 'General', position: 40, label: 'MIME Type' } ]
+  }
+  MimeType;
+
+  @UI: {
+    lineItem:       [ { position: 50, importance: #MEDIUM, label: 'Active' } ],
+    fieldGroup:     [ { qualifier: 'General', position: 50, label: 'Active' } ],
+    selectionField: [ { position: 20 } ]
+  }
+  IsActive;
+
+  @UI: {
+    lineItem:   [ { position: 60, importance: #LOW, label: 'Created By' } ],
+    fieldGroup: [ { qualifier: 'Admin', position: 10, label: 'Created By' } ]
+  }
+  CreatedBy;
+
+  @UI: {
+    lineItem:   [ { position: 70, importance: #LOW, label: 'Created At' } ],
+    fieldGroup: [ { qualifier: 'Admin', position: 20, label: 'Created At' } ]
+  }
+  CreatedAt;
+
+  @UI: {
+    lineItem:   [ { position: 80, importance: #LOW, label: 'Last Changed By' } ],
+    fieldGroup: [ { qualifier: 'Admin', position: 30, label: 'Last Changed By' } ]
+  }
+  LastChangedBy;
+
+  @UI: {
+    lineItem:   [ { position: 90, importance: #LOW, label: 'Last Changed At' } ],
+    fieldGroup: [ { qualifier: 'Admin', position: 40, label: 'Last Changed At' } ]
+  }
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+}
