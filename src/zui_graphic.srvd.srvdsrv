@@ -1,0 +1,4 @@
+@EndUserText.label: 'Maintain Form Graphics'
+define service ZUI_GRAPHIC {
+  expose ZC_GRAPHIC as Graphic;
+}

@@ -1,3 +1,4 @@
+"! Behavior pool ของ ZR_GRAPHIC
 CLASS zbp_r_graphic DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_graphic.
 ENDCLASS.
 
