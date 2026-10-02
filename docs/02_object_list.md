@@ -59,14 +59,14 @@
 
 | Object | Type | Clone จาก | หน้าที่ | Status |
 |---|---|---|---|---|
-| `ZR_GRAPHIC` | CDS root view entity | `YR_GRAPHIC` | interface ของ table | ⬜ |
-| `ZR_GRAPHIC` | BDEF managed + draft | `YR_GRAPHIC` | behavior หลัก | ⬜ |
-| `ZTBC_GRAPHIC_D` | Draft table | `YTBC_GRAPHIC_D` | สร้างจาก quick fix ของ BDEF | ⬜ |
-| `ZBP_R_GRAPHIC` | Behavior pool | `YBP_R_GRAPHIC` | `lhc_Graphic` | ⬜ |
-| `ZCL_GRAPHIC_IMAGE_URL` | Class (virtual element) | `YCL_IMAGE_URL` | คำนวณ `ImageUrl` สำหรับ preview | ⬜ |
-| `ZC_GRAPHIC` | CDS projection | `YC_GRAPHIC` | สำหรับ UI | ⬜ |
-| `ZC_GRAPHIC` | BDEF projection | `YC_GRAPHIC` | | ⬜ |
-| `ZC_GRAPHIC` | Metadata extension | `YC_GRAPHIC` | layout Fiori Elements | ⬜ |
+| `ZR_GRAPHIC` | CDS root view entity | `YR_GRAPHIC` | interface ของ table | 🟨 |
+| `ZR_GRAPHIC` | BDEF managed + draft | `YR_GRAPHIC` | behavior หลัก | 🟨 |
+| `ZTBC_GRAPHIC_D` | Draft table | `YTBC_GRAPHIC_D` | สร้างจาก quick fix ของ BDEF | 🟨 |
+| `ZBP_R_GRAPHIC` | Behavior pool | `YBP_R_GRAPHIC` | `lhc_Graphic` | 🟨 |
+| `ZCL_GRAPHIC_IMAGE_URL` | Class (virtual element) | `YCL_IMAGE_URL` | คำนวณ `ImageUrl` สำหรับ preview | 🟨 |
+| `ZC_GRAPHIC` | CDS projection | `YC_GRAPHIC` | สำหรับ UI | 🟨 |
+| `ZC_GRAPHIC` | BDEF projection | `YC_GRAPHIC` | | 🟨 |
+| `ZC_GRAPHIC` | Metadata extension | `YC_GRAPHIC` | layout Fiori Elements | 🟨 |
 
 ## Phase 3 — Service + ทดสอบ
 
