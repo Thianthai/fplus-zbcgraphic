@@ -62,7 +62,7 @@
 | `ZR_GRAPHIC` | CDS root view entity | `YR_GRAPHIC` | interface ของ table | ✅ `69a04a0` |
 | `ZR_GRAPHIC` | BDEF managed + draft | `YR_GRAPHIC` | behavior หลัก | ✅ `69a04a0` |
 | `ZTBC_GRAPHIC_D` | Draft table | `YTBC_GRAPHIC_D` | สร้างจาก quick fix ของ BDEF · `PK_IS_INVHASH = X` | ✅ `69a04a0` |
-| `ZBP_R_GRAPHIC` | Behavior pool | `YBP_R_GRAPHIC` | `lhc_Graphic` · global class ยังไม่มี `"!` (แก้รอบหน้า) | ✅ `69a04a0` |
+| `ZBP_R_GRAPHIC` | Behavior pool | `YBP_R_GRAPHIC` | `lhc_Graphic` · ABAP Doc เติมแล้ว `821ef10` | ✅ `69a04a0` |
 | `ZCL_GRAPHIC_IMAGE_URL` | Class (virtual element) | `YCL_IMAGE_URL` | คำนวณ `ImageUrl` สำหรับ preview | ✅ `69a04a0` |
 | `ZC_GRAPHIC` | CDS projection | `YC_GRAPHIC` | สำหรับ UI | ✅ `69a04a0` |
 | `ZC_GRAPHIC` | BDEF projection | `YC_GRAPHIC` | | ✅ `69a04a0` |
@@ -74,9 +74,9 @@
 
 | Object | Type | Clone จาก | หน้าที่ | Status |
 |---|---|---|---|---|
-| `ZUI_GRAPHIC` | Service definition | `YUI_GRAPHIC` | expose `ZC_GRAPHIC as Graphic` | 🟨 |
-| `ZUI_GRAPHIC_O4` | Service binding OData V4 UI | `YUI_GRAPHIC_O4` | publish + preview · ชื่อ/version ต้องตรงกับ path ใน `ZCL_GRAPHIC_IMAGE_URL` | 🟨 |
-| SCO2 / SUSH ของ binding | generated | — | SAP สร้างตอน publish | ⬜ |
+| `ZUI_GRAPHIC` | Service definition | `YUI_GRAPHIC` | expose `ZC_GRAPHIC as Graphic` | ✅ `821ef10` |
+| `ZUI_GRAPHIC_O4` | Service binding OData V4 UI | `YUI_GRAPHIC_O4` | publish + preview · ชื่อ/version ต้องตรงกับ path ใน `ZCL_GRAPHIC_IMAGE_URL` | ✅ `821ef10` · published · ทดสอบ preview T1–T8 ผ่าน 2026-10-02 |
+| `ZUI_GRAPHIC_O4_0001_G4BA` (SCO2) · `881BC055…HT` (SUSH) | generated | — | SAP สร้างตอน publish (`S_START`) | ✅ `821ef10` |
 | `zbcgraphic` / BSP `ZBCGRAPHIC` | Fiori app (BAS · List Report OData V4) | — | deploy ขึ้น tenant · tile `ZBCGraphic-manage` | ⬜ ผู้ใช้ทำเอง |
 | `ZBCGRAPHIC_UI5R` (คาดว่า generate) | IAM app | — | ผูก service `ZUI_GRAPHIC_O4` + Fiori app | ⬜ ผู้ใช้ทำเอง |
 | `ZBCGRAPHIC_BC` | Business catalog | — | ผูก IAM app ให้ assign ผ่าน business role | ⬜ ผู้ใช้ทำเอง |
@@ -88,3 +88,18 @@
 | `ZCL_UTILITY=>get_form_graphic( )` | Method ใหม่ | รับ `graphic_name` -> คืน `graphic_content` ของรูปที่ `is_active = X` | ⬜ |
 | `ZCL_UTILITY=>get_form_graphic_base64( )` | Method ใหม่ | เหมือนตัวบนแต่คืน base64 string สำหรับ XML data ของ Adobe Form | ⬜ |
 | `ZCL_UTILITY` testclasses | ABAP Unit | test ด้วย SQL test double | ⬜ |
+
+## Test ที่ผ่านแล้ว
+
+| # | Test | ผล |
+|---|---|---|
+| T1 | upload `logo.png` ไม่พิมพ์ชื่อ -> `LOGO` · `image/png` · Active | ✅ 2026-10-02 |
+| T2 | หลัง upload ช่อง Image File แสดงทันที | ✅ |
+| T3 | list แสดงรูป Preview | ✅ |
+| T4 | พิมพ์ `logo` -> แปลงเป็น `LOGO` และติด message 003 | ✅ |
+| T5 | ไฟล์ `.pdf` / `.gif` -> message 001 / 002 | ✅ |
+| T6 | edit รูปเดิมไม่ติดชื่อซ้ำกับตัวเอง | ✅ |
+| T7 | เอา Active ออกแล้ว save | ✅ |
+| T8 | admin field เติมครบโดย managed | ✅ |
+
+หมายเหตุ: table ทั้งสองตัวได้ auth group `CUS_DEV_SUP_DA` (TDDAT) มาตอน push รอบนี้ — ระบบเติมเอง ตรงกับ source
