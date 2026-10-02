@@ -84,11 +84,13 @@
 
 ## Phase 4 — Utility method (repo `fplus-zbcutility`)
 
+> confirm 2026-10-02: อ่านจาก table `ZTBC_GRAPHIC` ตรง · test class แยก `ltc_form_graphic` · รับ dependency `ZBCUTILITY` -> `ZBCGRAPHIC`
+
 | Object | Type | หน้าที่ | Status |
 |---|---|---|---|
-| `ZCL_UTILITY=>get_form_graphic( )` | Method ใหม่ | รับ `graphic_name` -> คืน `graphic_content` ของรูปที่ `is_active = X` | ⬜ |
-| `ZCL_UTILITY=>get_form_graphic_base64( )` | Method ใหม่ | เหมือนตัวบนแต่คืน base64 string สำหรับ XML data ของ Adobe Form | ⬜ |
-| `ZCL_UTILITY` testclasses | ABAP Unit | test ด้วย SQL test double | ⬜ |
+| `ZCL_UTILITY=>get_form_graphic( )` | Method ใหม่ | รับ `graphic_name` -> คืน `graphic_content` ของรูปที่ `is_active = X` | 🟨 |
+| `ZCL_UTILITY=>get_form_graphic_base64( )` | Method ใหม่ | เหมือนตัวบนแต่คืน base64 string สำหรับ XML data ของ Adobe Form | 🟨 |
+| `ZCL_UTILITY` testclasses `ltc_form_graphic` | ABAP Unit | `cl_osql_test_environment` จำลอง `ZTBC_GRAPHIC` | 🟨 |
 
 ## Test ที่ผ่านแล้ว
 
