@@ -37,6 +37,7 @@ Adobe Form ของ RICEFW ต่าง ๆ ──▶ ZCL_UTILITY ──┘  (g
 | [docs/01_source_analysis.md](docs/01_source_analysis.md) | วิเคราะห์ source YGRAPHIC · สิ่งที่ต้องปรับตอน clone |
 | [docs/02_object_list.md](docs/02_object_list.md) | รายการ object + แผน phase + สถานะ |
 | [docs/03_open_questions.md](docs/03_open_questions.md) | ทะเบียนข้อสงสัย |
+| [docs/04_usage.md](docs/04_usage.md) | ตัวอย่างเรียก `ZCL_UTILITY` ดึงรูปไป binding ใน Adobe Form |
 
 ## การแบ่งงาน push
 
