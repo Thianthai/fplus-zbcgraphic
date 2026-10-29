@@ -38,7 +38,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_graphic_image_url IMPLEMENTATION.
+CLASS ZCL_GRAPHIC_IMAGE_URL IMPLEMENTATION.
+
 
   METHOD if_sadl_exit_calc_element_read~calculate.
 
@@ -68,5 +69,4 @@ CLASS zcl_graphic_image_url IMPLEMENTATION.
     rv_guid_string = |{ lv_uuid_hex+0(8) }-{ lv_uuid_hex+8(4) }-{ lv_uuid_hex+12(4) }-{ lv_uuid_hex+16(4) }-{ lv_uuid_hex+20(12) }|.
 
   ENDMETHOD.
-
 ENDCLASS.
